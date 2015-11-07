@@ -47,56 +47,165 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var flare = 
+var root = 
 {
-  "name" : "CompilationUnit",
-    "children" : [ 
+  "name" : "root",
+  "children" : [
     {
-      "name" : "(0) PackageDeclaration",
-      "children" : [
-        {"name" : "(0 not sure) null"},
-        {"name" : "(1 packages) Qualified Identifier"}
+      "name" : "CompilationUnit",
+      "children" : [ 
+        {
+          "name" : "(0) PackageDeclaration",
+          "children" : [
+            {"name" : "(0 not sure) null"},
+            {"name" : "(1 packages) Qualified Identifier"}
+          ]
+        },
+        {
+          "name" : "(1) ClassDeclaration",
+          "children" : [
+            {
+              "name" : "(0) Modifiers",
+              "children" : [
+                {"name" : "modifier"},
+                {"name" : "modifier"},
+                {"name" : "modifier"},
+                {"name" : "modifier"}
+              ]
+            },
+            {
+              "name" : "(1) ClassName",
+            },
+            {
+              "name" : "(2) NULL",  
+            },
+            {
+              "name" : "(3 possibly) Extension",  
+            },
+            {
+              "name" : "(4) NULL",  
+            },
+            {
+              "name" : "(5) ClassBody",
+              "children" : [
+                {"name" : "FieldDelaration"},
+                {"name" : "ConstructorDeclaration"},
+                {"name" : "MethodDeclaration"},
+                {"name" : "ExpressionStatement"},
+              ] 
+            }
+          ]
+        }
       ]
     },
     {
-      "name" : "(1) ClassDeclaration",
-      "children" : [
+      "name" : "MethodDeclaration",
+      "children" : [ 
         {
-          "name" : "(0) Modifiers",
+        "name" : "(0) Modifiers",
           "children" : [
-            {"name" : "modifier"},
             {"name" : "modifier"},
             {"name" : "modifier"},
             {"name" : "modifier"}
           ]
         },
         {
-          "name" : "(1) ClassName",
+        "name" : "(1) NULL",
         },
         {
-          "name" : "(2) NULL",  
+        "name" : "VoidType || Type(more about type)",
         },
         {
-          "name" : "(3 possibly) Extension",  
+        "name" : "(3) Some MethodName like main"
         },
         {
-          "name" : "(4) NULL",  
+        "name" : "(4) FormalParameters(more)" 
         },
         {
-          "name" : "(5) ClassBody",
-          "children" : [
-            {"name" : "FieldDelaration"},
-            {"name" : "ConstructorDeclaration"},
-            {"name" : "MethodDeclaration"},
-            {"name" : "ExpressionStatement"},
-          ] 
+        "name" : "(5) NULL"
+        },
+        {
+        "name" : "(6) NULL"
+        },
+        {
+        "name" : "(7) Block"
         }
       ]
-    }
+    },
+    {
+      "name" : "Type",
+      "children" : [
+        {"name" : "(0) QualifiedIdentifier"},
+        {"name" : "(1) null || Dimension for 2D Array"}
+      ]
+    },
+    {
+      "name" : "(0) FormalParameters",
+      "children" : [
+        {"name" : "(0) FormalParameter",
+        "children" : [ 
+          {
+          "name" : "(0) Modifiers",
+            "children" : [
+              {"name" : "modifier"},
+              {"name" : "modifier"},
+              {"name" : "modifier"}
+            ]
+          },
+          {
+          "name" : "(1) Type(more)"
+          },
+          {
+          "name" : "(2) NULL"
+          },
+          {
+          "name" : "(3) Name for the paramter"
+          },
+          {
+          "name" : "(4) NULL"
+          }
+        ]
+        },
+        {"name" : "(1) FormalParameter"},
+        {"name" : "(2) FormalParameter"},
+        {"name" : "(3) FormalParameter"}
+      ]
+  },
+  {
+    "name" : "(0) ConstructorDeclarator",
+    "children" : [ 
+      {
+      "name" : "(0) Modifiers",
+        "children" : [
+          {"name" : "modifier"},
+          {"name" : "modifier"},
+          {"name" : "modifier"}
+        ]
+      },
+      {
+      "name" : "(1) NULL",
+      },
+      {
+      "name" : "(2) name for class",
+      },
+      {
+      "name" : "(3) FormalParameters(more)" 
+      },
+      {
+      "name" : "(4) NULL"
+      },
+      {
+      "name" : "(5) BLOCK"
+      }
     ]
+  }
+
+
+
+  ]
 };
 
-  root = flare;
+
   root.x0 = height / 2;
   root.y0 = 0;
 
