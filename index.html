@@ -47,13 +47,13 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var root = 
+var root =
 {
   "name" : "root",
   "children" : [
     {
       "name" : "CompilationUnit",
-      "children" : [ 
+      "children" : [
         {
           "name" : "(0) PackageDeclaration",
           "children" : [
@@ -77,13 +77,13 @@ var root =
               "name" : "(1) ClassName",
             },
             {
-              "name" : "(2) NULL",  
+              "name" : "(2) NULL",
             },
             {
-              "name" : "(3 possibly) Extension",  
+              "name" : "(3 possibly) Extension",
             },
             {
-              "name" : "(4) NULL",  
+              "name" : "(4) NULL",
             },
             {
               "name" : "(5) ClassBody",
@@ -92,7 +92,7 @@ var root =
                 {"name" : "ConstructorDeclaration"},
                 {"name" : "MethodDeclaration"},
                 {"name" : "ExpressionStatement"},
-              ] 
+              ]
             }
           ]
         }
@@ -100,7 +100,7 @@ var root =
     },
     {
       "name" : "MethodDeclaration",
-      "children" : [ 
+      "children" : [
         {
         "name" : "(0) Modifiers",
           "children" : [
@@ -119,7 +119,7 @@ var root =
         "name" : "(3) Some MethodName like main"
         },
         {
-        "name" : "(4) FormalParameters(more)" 
+        "name" : "(4) FormalParameters(more)"
         },
         {
         "name" : "(5) NULL"
@@ -143,7 +143,7 @@ var root =
       "name" : "(0) FormalParameters",
       "children" : [
         {"name" : "(0) FormalParameter",
-        "children" : [ 
+        "children" : [
           {
           "name" : "(0) Modifiers",
             "children" : [
@@ -173,7 +173,7 @@ var root =
   },
   {
     "name" : "(0) ConstructorDeclarator",
-    "children" : [ 
+    "children" : [
       {
       "name" : "(0) Modifiers",
         "children" : [
@@ -189,7 +189,7 @@ var root =
       "name" : "(2) name for class",
       },
       {
-      "name" : "(3) FormalParameters(more)" 
+      "name" : "(3) FormalParameters(more)"
       },
       {
       "name" : "(4) NULL"
@@ -201,7 +201,7 @@ var root =
   },
   {
     "name" : "(0) Declarators",
-    "children" : [ 
+    "children" : [
       {
       "name" : "(0) Declarator",
         "children" : [
@@ -229,7 +229,7 @@ var root =
   },
   {
     "name" : "(0) NewClassExpression",
-    "children" : [ 
+    "children" : [
       {
       "name" : "(0) NULL"
       },
@@ -262,7 +262,7 @@ var root =
   },
   {
     "name" : "(0) CallExpression",
-    "children" : [ 
+    "children" : [
       {
       "name" : "(0) Caller"
       },
@@ -276,6 +276,39 @@ var root =
       "name" : "(3) Arguments"
       }
     ]
+  },
+  {
+    "name" : "(0) ForStatement",
+  	"children" : [
+  		{
+  		"name" : "(0) BasicForControl",
+  			"children" : [
+  				{"name" : "(0) Modifiers"},
+  				{"name" : "(1) Type"},
+  				{"name" : "(2) Declarators"}
+  				{"name" : "(3) RelationalExpression"}
+  				{"name" : "(4) ExpressionList"}
+  			]
+  		},
+  		{
+  		  "name" : "(1) Block",
+  			"children" : [
+  				{"name" : "(0) ExpressionStatement"},
+  				{"name" : "(1) ExpressionStatement"}
+  			]
+  		}
+  	]
+  },
+  {
+    "name" : "(0) WhileStatement",
+  	"children" : [
+  		{
+  		"name" : "(0) RelationalExpressionl"
+  		},
+  		{
+  		"name" : "(1) Block",
+  		}
+  	]
   }
 
 
